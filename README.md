@@ -54,60 +54,71 @@ The application will start at http://localhost:8080.
 # REST API Endpoints
 # Category APIs
 
-# GET All Categories with Pagination:
+GET All Categories with Pagination:
 GET /api/categories?page={id}
 Example: http://localhost:8080/api/categories?page=0
 
-# POST Create a New Category:
+POST Create a New Category:
 POST /api/categories
+Example: http://localhost:8080/api/categories
 Body (JSON):
 {
-  "name": "Electronics"
+    "name": "Electronics",
+    "description": "Mobiles and Laptops"
 }
 
-# GET Category by ID:
+GET Category by ID:
 GET /api/categories/{id}
 Example: http://localhost:8080/api/categories/1
 
-# PUT Update a Category by ID:
+PUT Update a Category by ID:
 PUT /api/categories/{id}
+Example: http://localhost:8080/api/categories/1
 Body (JSON):
 {
-  "name": "Updated Category Name"
+    "name": "Updated category name",
+    "description": "Add description"
 }
 
-# DELETE Delete a Category by ID:
+DELETE Delete a Category by ID:
 DELETE /api/categories/{id}
 Example: http://localhost:8080/api/categories/1
 
 # Product APIs
 
-# GET All Products with Pagination:
+GET All Products with Pagination:
 GET /api/products?page={id}
 Example: http://localhost:8080/api/products?page=0
 
-# POST Create a New Product:
+POST Create a New Product:
 POST /api/products
+Example: http://localhost:8080/api/products
 Body (JSON):
 {
-  "name": "Laptop",
-  "price": 1000,
-  "categoryId": 1
+    "name": "burger",
+    "category": {
+        "id": 11
+    },
+    "price": 250,
+    "description": "extra cheese"
 }
 
-# GET Product by ID:
+
+GET Product by ID:
 GET /api/products/{id}
 Example: http://localhost:8080/api/products/1
 
-# PUT Update a Product by ID:
+PUT Update a Product by ID:
 PUT /api/products/{id}
+Example: http://localhost:8080/api/products/3
 Body (JSON):
 {
-  "name": "Updated Product Name",
-  "price": 1200
+    "name": "pasta",
+    "description": "creamy and cheese",
+    "price": 200
 }
 
-# DELETE Delete a Product by ID:
+DELETE Delete a Product by ID:
 DELETE /api/products/{id}
 Example: http://localhost:8080/api/products/1
 
